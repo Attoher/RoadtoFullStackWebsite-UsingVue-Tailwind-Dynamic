@@ -1,7 +1,6 @@
 # RoadtoFullStackWebsite
  
-![image](https://github.com/user-attachments/assets/41faeb19-50c9-4548-b556-68ba3bd190c8)
-
+![image](https://github.com/user-attachments/assets/7063d4c8-1ef1-4705-af66-68590b0c109e)
 
 ## Description
 
