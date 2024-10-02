@@ -8,7 +8,7 @@ This project provides an interactive checklist to guide aspiring developers thro
 
 ## Demo
 
-You can view the live demo of this project [here]([https://your-demo-link.com](https://attoher.github.io/RoadtoFullStackWebsite-UsingVue-Tailwind-Dynamic/)).
+You can view the live demo of this project [here](https://attoher.github.io/RoadtoFullStackWebsite-UsingVue-Tailwind-Dynamic/).
 
 ## Features
 
