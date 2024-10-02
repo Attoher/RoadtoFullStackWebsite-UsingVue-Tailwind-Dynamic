@@ -1,5 +1,5 @@
 # RoadtoFullStackWebsite
- 
+
 ![image](https://github.com/user-attachments/assets/7063d4c8-1ef1-4705-af66-68590b0c109e)
 
 ## Description
@@ -9,26 +9,29 @@ This project provides an interactive checklist to guide aspiring developers thro
 ## Features
 
 - Interactive checklist with multiple categories (front-end, back-end, databases, etc.).
-- Progress tracking for each development stage.
-- Editable tasks with single-keypress saving for a smooth user experience.
+- Dynamic progress tracking for each development stage.
+- Add, edit, and delete tasks with real-time updates to the checklist.
+- Checkbox functionality for marking tasks as complete or incomplete.
 - Responsive design, ensuring accessibility on all devices.
+- Editable tasks with single-keypress saving for a smooth user experience.
+- Data persistence using local storage to save checklist state across sessions.
 - Built using Vue.js for dynamic user interaction and Tailwind CSS for modern, responsive styling.
 
-## Prerequisite
+## Prerequisites
 
 Berikut adalah software atau package yang perlu diinstal sebelum menjalankan proyek:
 
-- **Any modern IDE (e.g., Visual Studio Code).
-- **Node.js installed (for running the project).
-- **Basic understanding of web development (HTML, CSS, JavaScript).
+- **Any modern IDE (e.g., Visual Studio Code)**
+- **Node.js installed (for running the project)**
+- **Basic understanding of web development (HTML, CSS, JavaScript)**
 
-## Instalation
+## Installation
 
 Langkah-langkah untuk menginstal dan menjalankan proyek ini di lingkungan lokal:
 
 ```bash
 # 1. Clone repositori ini
-git clone [https://github.com/Attoher/RoadtoFullStackWebsite-UsingVue-Tailwind.git]
+git clone https://github.com/Attoher/RoadtoFullStackWebsite-UsingVue-Tailwind.git
 
 # 2. Masuk ke direktori proyek
 cd RoadtoFullStackWebsite-UsingVue-Tailwind
@@ -38,6 +41,7 @@ npm install
 
 # 4. Jalankan aplikasi
 npm start
+
 ```
 
 ## Structure Project
@@ -58,5 +62,4 @@ RoadtoFullStack/
 │   └── styles.css      # Main folder for source code
 │
 ├── tailwind.config.js  # Configuration file for Tailwind CSS
-└── temp.html           # Temporary HTML file, possibly for testing purposes
 ```
