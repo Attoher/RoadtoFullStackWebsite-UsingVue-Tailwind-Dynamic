@@ -6,6 +6,10 @@
 
 This project provides an interactive checklist to guide aspiring developers through the roadmap of becoming a full-stack developer. The checklist includes essential skills, tools, and concepts, from front-end to back-end development, ensuring that learners can track their progress as they master various technologies. The goal of this project is to offer a clear, structured, and user-friendly interface for developers to follow their learning journey towards full-stack proficiency.
 
+## Demo
+
+You can view the live demo of this project [here]([https://your-demo-link.com](https://attoher.github.io/RoadtoFullStackWebsite-UsingVue-Tailwind-Dynamic/)).
+
 ## Features
 
 - Interactive checklist with multiple categories (front-end, back-end, databases, etc.).
