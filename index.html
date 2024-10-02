@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Checklist</title>
+    <link href="dist/output.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js" defer></script>
+    <link rel="stylesheet" href="src/styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-100 text-gray-800 font-sans p-6">
+    <div id="loadingScreen" class="loading-screen">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <div id="app" class="container mx-auto">
+        <h1 class="text-4xl font-bold text-center text-green-600 mb-8">Road to Full Stack</h1>
+        
+        <div class="mb-4">
+            <label class="mr-2">Filter:</label>
+            <select v-model="filter" class="p-2 border rounded">
+                <option value="all">All</option>
+                <option value="checked">Checked</option>
+                <option value="unchecked">Unchecked</option>
+            </select>
+        </div>
+
+        <div class="mb-4">
+            <input type="text" v-model="newCategory" @keyup.enter="addCategory" placeholder="Add new category..." class="p-2 border rounded w-3/4">
+            <button @click="addCategory" class="p-2 bg-green-600 text-white rounded">Add Category</button>
+        </div>
+        
+        <div v-for="(category, categoryIndex) in filteredCategories" :key="categoryIndex" class="mb-8 p-6 bg-white rounded-lg shadow-md">
+            <h2 class="text-2xl font-semibold text-gray-700 mb-4">{{ category.name }}</h2>
+            <input type="text" v-model="newItem[categoryIndex]" @keyup.enter="addItem(categoryIndex)" placeholder="Add new item..." class="p-2 border rounded w-3/4 mb-4">
+            <button @click="addItem(categoryIndex)" class="p-2 bg-green-600 text-white rounded">Add Item</button>
+            
+            <!-- Progress Bar Section -->
+            <div class="relative mb-4">
+                <div class="bg-gray-300 rounded h-2">
+                    <div class="bg-green-600 h-2 rounded" :style="{ width: `${calculateProgress(categoryIndex)}%` }"></div>
+                </div>
+                <p class="mt-1 text-sm">Progress: {{ calculateProgress(categoryIndex) }}%</p>
+            </div>
+            
+            <ul>
+                <li v-for="(item, itemIndex) in category.items" :key="itemIndex" :class="{ checked: item.checked }" class="flex items-center py-2 px-4 rounded-md transition-all duration-300 ease-in-out transform hover:bg-gray-200 hover:scale-105">
+                    <label class="flex items-center cursor-pointer w-full hover:text-green-600">
+                        <input 
+                            type="checkbox" 
+                            v-model="item.checked" 
+                            @change="saveToLocalStorage" 
+                            class="mr-2 w-5 h-5 text-green-500 rounded border-gray-300 focus:ring-green-500"
+                        >
+                        <span v-if="!item.isEditing" :class="{ 'line-through': item.checked }">{{ item.name }}</span>
+                        <input 
+                            v-if="item.isEditing" 
+                            v-model="editedItem[categoryIndex][itemIndex]" 
+                            class="p-2 border rounded w-full" 
+                            @keyup.enter="saveEdit(categoryIndex, itemIndex)"
+                        >
+                    </label>
+                    <div class="ml-auto flex">
+                        <button @click="toggleEdit(categoryIndex, itemIndex)" class="px-2 py-2 text-white bg-blue-500 hover:bg-blue-700 rounded mr-2">
+                            {{ item.isEditing ? 'Save' : 'Edit' }}
+                        </button>
+                        <button @click="deleteItem(categoryIndex, itemIndex)" class="px-2 py-2 text-white bg-red-500 hover:bg-red-700 rounded">Delete</button>
+                    </div>
+                </li>
+            </ul>                      
+        </div>
+    </div>
+
+    <script src="src/scripts.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+{
+  "name": "1-html",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx serve src"
+  },
+  "devDependencies": {
+    "serve": "^14.2.3"
+  }
+}
